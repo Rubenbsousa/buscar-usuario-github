@@ -3,6 +3,10 @@
   .container { 
     width: 95%; 
   }
+
+  .profile-data {
+    width: 70%;
+  }
 }
 
 /* Tablet landscape */
@@ -11,8 +15,13 @@
     font-size: var(--font-xl);
   }
   
-  .repositories ul {
+  .repo-items {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .repo-item {
+    width: 100%;
   }
 }
 
@@ -27,15 +36,17 @@
     max-width: 100%;
   }
   
-  .repositories ul { 
+  .repo-items { 
     grid-template-columns: 1fr; 
   }
   
-  .container .profile-data .info { 
-    flex-direction: column; 
+  .profile-data {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
   }
   
-  .container .profile-data .counters { 
+  .seguidores { 
     gap: var(--spacing-xl); 
   }
   
@@ -50,17 +61,17 @@
     font-size: var(--font-2xl);
   }
   
-  .container .profile-data .counters span {
+  .seguidores p {
     font-size: var(--font-xl);
   }
   
-  .container .profile-data .counters h4 {
+  .seguidores h4 {
     font-size: 0.7rem;
   }
 }
 
 /* Mobile médio */
-@media (max-width: 425px) {
+@media (max-width: 480px) {
   main { 
     padding: var(--spacing-xl) var(--spacing-xs); 
   }
@@ -69,30 +80,34 @@
     padding: var(--spacing-md); 
   }
   
-  .container .profile-data .info img {
-    width: 8rem;
-    height: 8rem;
-  }
-  
-  .container .profile-data .info h1 {
+   .profile-data  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    gap: 10px;
+    margin-bottom: 20px;
+   }
+
+  .profile-info h2 {
     font-size: var(--font-lg);
   }
   
-  .container .profile-data .info .data {
+  .profile-info p {
     padding: var(--spacing-md) 0;
     min-width: 100%;
   }
   
-  .container .profile-data .counters { 
+  .seguidores { 
     gap: var(--spacing-lg); 
   }
   
-  .repositories ul li a h4 {
+  .repo-name {
     font-size: var(--font-xs);
   }
   
-  .repositories ul li a i {
-    font-size: 0.65rem;
+  .repo-info {
+    font-size: 0.7rem;
   }
 }
 
@@ -102,12 +117,12 @@
     font-size: var(--font-md);
   }
   
-  .container .profile-data .info img {
+  .profile-data img {
     width: 7rem;
     height: 7rem;
   }
   
-  .container .profile-data .counters {
+  .seguidores {
     flex-direction: column;
     gap: var(--spacing-md);
   }
@@ -123,7 +138,7 @@
     padding: var(--spacing-sm);
   }
   
-  .container .profile-data .info img {
+  .profile-data img {
     width: 6rem;
     height: 6rem;
   }

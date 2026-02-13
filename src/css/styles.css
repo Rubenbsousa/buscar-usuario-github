@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 
+/* --- Variáveis Globais --- */
 :root {
   --radius: 0.5rem;
   --border: hsl(214.3, 31.8%, 91.4%);
@@ -34,6 +35,7 @@
   --transition: all 0.2s;
 }
 
+/* --- Reset e Base --- */
 body {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #fda085 100%);
   background-size: 400% 400%;
@@ -45,6 +47,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* --- Layout Principal --- */
 main {
   display: flex;  
   justify-content: center;
@@ -52,17 +55,12 @@ main {
   padding: var(--spacing-2xl) var(--spacing-md);      
 }
 
-.devicon-github-original{
-  font-size: var(--font-3xl);
-  margin-bottom: var(--spacing-xl);
-  color: #FFFFFF;
-}
-
 .section{
   padding: 4rem 0;
   border-top: 1px solid var(--border);
 }
 
+/* Container do Card Principal */
 .container {
   width: 90%;
   max-width: 64rem;
@@ -75,6 +73,13 @@ main {
   margin: 0 auto;
   border: 1px solid var(--border);
   box-shadow: var(--shadow-lg);
+}
+
+/* --- Componentes: Header e Busca --- */
+.devicon-github-original{
+  font-size: var(--font-3xl);
+  margin-bottom: var(--spacing-xl);
+  color: #FFFFFF;
 }
 
 .container header {
@@ -141,7 +146,90 @@ main {
   box-shadow: var(--shadow-sm);
 }
 
+/* --- Componentes: Perfil do Usuário --- */
 .container #profile-results {
-
   color: #000000;
+}
+
+/* Dados do Perfil (Foto e Bio) */
+.profile-data {
+    display: flex;
+    text-align: left;
+    margin: 0 auto;
+    gap: 10px;
+    margin-bottom: 20px;
+    width: 50%;
+}
+
+.profile-data img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+/* Contadores (Seguidores/Seguindo) */
+.seguidores {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+/* --- Componentes: Lista de Repositórios --- */
+.repo-title {
+    width: 100%;
+}
+
+.repo-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.repo-item {
+    width: 31%;
+    min-width: 200px;
+}
+
+.repo-link {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    height: 180px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    color: inherit;
+}
+
+.repo-name {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.repo-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.8rem;
+}
+
+/* --- Feedback de Erro --- */
+.erro {
+    color: red;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
 }

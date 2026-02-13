@@ -1,16 +1,29 @@
 import { fetchGitHubUser } from './services.js'
-import { mostrarUsuario } from './screen.js'
+import { mostrarUsuario, mostrarErro } from './screen.js'
 
 const inputSearch = document.querySelector('#input-search')
 const buttonSearch = document.querySelector('#btn-search')
 
-buttonSearch.addEventListener('click', async () => {
+/**
+ * Função principal que orquestra a busca e exibição dos dados.
+ */
+async function handleSearch() {
     const username = inputSearch.value.trim()
-    if (!username) return alert('Preencha o campo com o nome do usuário do GitHub')
+    if (!username) return mostrarErro('Preencha o campo com o nome do usuário do GitHub')
     const user = await fetchGitHubUser(username)
     if (user) {
         mostrarUsuario(user)
     } else {
-        alert('Usuário não encontrado ou erro na busca.')
+        mostrarErro('Usuário não encontrado ou erro na busca.')
+    }
+}
+
+// Evento de clique no botão
+buttonSearch.addEventListener('click', handleSearch)
+
+// Evento de tecla 'Enter' no input
+inputSearch.addEventListener('keyup', (e) => {
+    if (e.key === 'Enter') {
+        handleSearch()
     }
 })
