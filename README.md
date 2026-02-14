@@ -1,6 +1,6 @@
 # Visualizador de Perfil do GitHub
 
-Este é um projeto desenvolvido para praticar o consumo de APIs externas, manipulação do DOM e design responsivo. A aplicação permite buscar por um usuário do GitHub e visualizar suas principais informações e repositórios recentes.
+Este é um projeto desenvolvido durante o curso do DevQuest2.0, para praticar o consumo de APIs externas, manipulação do DOM e design responsivo. A aplicação permite buscar por um usuário do GitHub e visualizar suas principais informações e repositórios recentes.
 
 ## 📋 Funcionalidades
 
